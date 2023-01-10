@@ -1,0 +1,92 @@
+@import "../../../public/font/Roboto/stylesheet.css";
+@import "../../styles/theme";
+
+.footer{
+    width: 963px;//1008px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto';
+    &_container{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: center;
+        .column + .column{
+            margin-left: 128px;
+        }
+    }
+    &_list{
+        width: 177px;
+        display: flex;
+
+        text-align: left;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-content: stretch;
+        .footer_part{
+            height: auto;
+            margin-right: 8px;
+
+            font-weight: 400;
+            font-size:12px;
+            line-height: 16px;
+            color: var(--text);
+            .footer_svg{
+                background-color: var(--text-bth-light);
+                border-radius: 15px;
+                border: 1px solid var(--text-bth-light);
+            }
+        }
+    }
+    &_copyright {
+        margin-bottom: 32px;
+        margin-top: 16px;
+        text-align: center;
+        color: var(--text-title);
+        font-weight: 400;
+        font-family: 'Roboto';
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1440px){
+    .footer{
+        width: max-content;
+        &_container .column + .column{
+            margin-left: auto;
+        }
+    }
+}
+
+@media (max-width:800px){
+    .footer{
+        width: 320px;
+        &_container{
+            flex-wrap: wrap;
+        }
+        .column + .column{
+            margin-left: 0px;
+        }
+        &_column{
+            width: 137px;
+        }
+        &_list{
+            width: 137px;
+        }
+        &_copyright{
+            margin-top: 32px;
+        }
+    }
+}
+
+@media (max-width:400px){
+    .footer{
+        width: 317px;
+    }
+}
