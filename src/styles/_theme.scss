@@ -1,0 +1,104 @@
+
+$primary:   #EF5B59; //border-bth-concact=  bth-hero=  banner-pink=
+$secondary: #F4F7FE; //text-company= text-banner=
+$mustard:   #F1C40F; //banner-yellow= switch=
+$purple:    #20014D; //banner-purple= div-company=
+$light:     #FFFFFF; //title-banner= rect= input-bg=
+
+$dark:      #343A40;
+$blue:      #235789;
+$yellow:    #F1D302;
+$darkred:   #DE4A46;
+$black:     #000000;
+$text:      #757575;
+$text-hero: #A5A8AC;
+$shadow:    rgba(49, 49, 49, 0.25);
+
+$themes: (
+    bg: (
+        dark:  #343A40, //bg+
+        light: #FFFFFF, //bg+
+    ),
+    primary-light: (
+        dark:  #F4F7FE, //text-signUp+ svg-icon+ bth-concact:hover+ bth-concact-text+
+        light: #EF5B59, //text-signUp+ svg-icon+ bth-concact:hover+ bth-concact-text+
+    ), 
+    secondary-light: (
+        dark:  #DE4A46, //div+
+        light: #F4F7FE, //div+
+    ),
+    text:(
+        dark:  #F4F7FE, //text+
+        light: #757575, //text+
+    ),
+    text-bth-light: (
+        dark:  #F4F7FE, //light-text-bth+ 
+        light: #FFFFFF, //light-text-bth+
+    ),
+    text-input: (
+        dark:  #343A40, //text-input+
+        light: #757575, //text-input+
+    ),
+    text-h4:(
+        dark:  #F4F7FE, //Kristin Watson+ title-price 
+        light: #000000, //
+    ),
+    text-title: (
+        dark:  #F4F7FE, //all title+
+        light: #343A40, //all title+
+    ),
+    bg-sub: (
+        dark:  #EF5B59, //+
+        light: #F4F7FE,
+    ),
+    bth-banner: (
+        dark:  #757575, //+
+        light: #FFFFFF,
+    ),
+    bth-concact: (
+        dark:  #EF5B59, //bth-concact-text:hover+ bth-concact+
+        light: #FFFFFF,
+    ),
+    bth-subscribe: (
+        dark:  #343A40, //+
+        light: #EF5B59,
+    ),
+    input: (
+        dark:  #343A40, //+
+        light: #757575,
+    ),
+    text-subscribe: (
+        dark:  #FFFFFF, //+
+        light: #757575,
+    ),
+    text-pop-up: (
+        dark:  #343A40, //+
+        light: #EF5B59,
+    ),
+    pop-up: (
+        dark:  #F4F7FE, //+
+        light: #343A40, 
+    ),
+    burger: (
+        dark:  #DE4A46, 
+        light: #20014D,
+    )
+);
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.dark {
+  @include styles("dark");
+}
+
+.light {
+  @include styles("light");
+}
